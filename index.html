@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For My Buggu ❤️ — Ankit</title>
+<meta name="description" content="Ankit ne Buggu ke liye kuch banaya hai.">
+<meta name="theme-color" content="#070509">
+<style>
+:root{--bg:#070509;--red:#ff4d6d;--pink:#ffb3c6;--txt:#f4e9ee;--mut:#a899a1;--glass:rgba(255,255,255,.05)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Georgia','Times New Roman',serif;line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden;height:100vh}
+.sans{font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
+canvas#fx{position:fixed;inset:0;z-index:0;pointer-events:none}
+section{position:relative;z-index:1;min-height:100vh;padding:14vh 7vw;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+h1,h2{font-weight:400;letter-spacing:.02em}
+h2{font-size:clamp(2rem,7vw,3.6rem);margin-bottom:1.5rem;background:linear-gradient(90deg,#fff,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+p{max-width:34rem;color:#e6d6dd;font-size:clamp(1.05rem,3.6vw,1.25rem)}
+.rv{opacity:0;transform:translateY(34px);filter:blur(12px);transition:1.4s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none;filter:none}
+.d1{transition-delay:.25s}.d2{transition-delay:.5s}.d3{transition-delay:.75s}
+.btn{margin-top:2rem;padding:.95rem 2.2rem;border-radius:99px;border:1px solid rgba(255,77,109,.6);background:rgba(255,77,109,.12);color:#fff;font:inherit;font-size:1.05rem;cursor:pointer;backdrop-filter:blur(10px);box-shadow:0 0 30px rgba(255,77,109,.25);transition:.4s}
+.btn:hover{background:rgba(255,77,109,.3);box-shadow:0 0 50px rgba(255,77,109,.5);transform:scale(1.04)}
+/* INTRO */
+#intro{position:fixed;inset:0;z-index:50;background:radial-gradient(circle at 50% 45%,#2a0a16,var(--bg) 70%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;transition:opacity 1.6s,visibility 1.6s}
+#intro.gone{opacity:0;visibility:hidden}
+#intro h1{font-size:clamp(2.6rem,12vw,5.5rem);text-shadow:0 0 40px rgba(255,77,109,.6);animation:fl 1.8s both}
+#intro p{margin-top:1rem;animation:fl 1.8s .9s both}
+#intro .btn{animation:fl 1.8s 1.8s both}
+@keyframes fl{from{opacity:0;filter:blur(14px);transform:translateY(20px)}to{opacity:1;filter:none;transform:none}}
+/* S1 */
+.bigdate{font-size:clamp(2.8rem,14vw,7rem);line-height:1.05;margin:1rem 0 2rem;background:linear-gradient(180deg,#fff,var(--red));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 30px rgba(255,77,109,.5))}
+.bigdate small{display:block;font-size:.28em;letter-spacing:.5em;color:var(--pink);-webkit-text-fill-color:var(--pink)}
+.lines p{margin:.3rem auto}.lines .hl{color:#fff;font-size:1.5rem;margin:1.2rem auto}
+/* S2 timeline */
+.tl{position:relative;max-width:30rem;width:100%;text-align:left;padding-left:2.2rem;margin-top:1rem}
+.tl:before{content:"";position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(var(--red),transparent);transform-origin:top;transform:scaleY(0);transition:3s ease}
+.tl.in:before{transform:scaleY(1)}
+.ev{position:relative;margin-bottom:2.4rem}
+.ev:before{content:"";position:absolute;left:-2.2rem;top:.55rem;width:16px;height:16px;border-radius:50%;background:var(--red);box-shadow:0 0 18px var(--red)}
+.ev b{display:block;color:var(--pink);font-weight:400;font-size:.9rem;letter-spacing:.2em;text-transform:uppercase}
+.ev span{font-size:1.2rem}
+.ev.ph{padding:1rem 1.2rem;border:1px dashed rgba(255,179,198,.35);border-radius:14px;background:var(--glass);color:var(--mut)}
+.ev.ph:before{background:transparent;border:2px solid var(--red);box-shadow:none}
+.tl{max-width:34rem}
+.ev .mt{display:block;font-size:1.5rem;color:#fff;margin:.2rem 0 .8rem}
+.ev.small span{font-size:1.1rem;color:var(--pink);font-style:italic}
+.mem p{font-size:1.02rem;line-height:1.9;margin:0 0 .9rem;max-width:none;color:#e6d6dd}
+.mph{display:grid;grid-template-columns:1fr;max-width:20rem;margin-inline:auto;gap:.5rem;margin-top:1.2rem}
+.mph img{width:100%;aspect-ratio:3/4;object-fit:cover;-webkit-mask-image:radial-gradient(ellipse 62% 58% at 50% 46%,#000 52%,transparent 100%);mask-image:radial-gradient(ellipse 62% 58% at 50% 46%,#000 52%,transparent 100%)}
+.cut{-webkit-mask-image:none!important;mask-image:none!important}
+/* S3 smile */
+#smile{background:radial-gradient(ellipse at 50% 60%,rgba(255,77,109,.14),transparent 65%)}
+.frame{position:relative;width:min(80vw,22rem);aspect-ratio:3/4;margin:2.5rem 0;overflow:hidden;background:#000}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:18% 40%;-webkit-mask-image:radial-gradient(ellipse 62% 58% at 50% 46%,#000 52%,transparent 100%);mask-image:radial-gradient(ellipse 62% 58% at 50% 46%,#000 52%,transparent 100%);animation:zoom 18s ease-in-out infinite alternate}
+@keyframes zoom{to{transform:scale(1.18)}}
+.frame:before{content:"";position:absolute;inset:-15%;background:radial-gradient(circle,rgba(255,77,109,.28),transparent 65%);z-index:-1}
+.hrt{position:absolute;pointer-events:none;animation:up 6s linear infinite;opacity:0}
+@keyframes up{0%{opacity:0;transform:translateY(0)}20%{opacity:.9}100%{opacity:0;transform:translateY(-120px) scale(.6)}}
+/* S4 gallery */
+#gallery{padding-left:0;padding-right:0}
+.row{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:1rem 10vw 2rem;width:100%;scrollbar-width:none}
+.row::-webkit-scrollbar{display:none}
+.ph-card{flex:0 0 min(72vw,20rem);aspect-ratio:3/4;scroll-snap-align:center;position:relative;overflow:hidden;cursor:pointer;background:#000;transition:.6s}
+.ph-card img{width:100%;height:100%;object-fit:cover;transition:1.2s;-webkit-mask-image:radial-gradient(ellipse 62% 58% at 50% 46%,#000 52%,transparent 100%);mask-image:radial-gradient(ellipse 62% 58% at 50% 46%,#000 52%,transparent 100%)}
+.ph-card:hover{transform:translateY(-8px)}
+.ph-card:hover img{transform:scale(1.08)}
+.ph-card figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.5rem 1rem 1rem;font-size:.95rem;color:var(--pink);text-align:center}
+.ph-card.missing{border:1px dashed rgba(255,255,255,.2);border-radius:20px;display:flex;align-items:center;justify-content:center;color:var(--mut);border-style:dashed}
+#lb{position:fixed;inset:0;z-index:60;background:rgba(5,3,7,.95);display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
+#lb.on{display:flex}
+#lb{background:#000}#lb img{max-width:96vw;max-height:84vh;-webkit-mask-image:radial-gradient(ellipse 62% 58% at 50% 46%,#000 52%,transparent 100%);mask-image:radial-gradient(ellipse 62% 58% at 50% 46%,#000 52%,transparent 100%);animation:fl .6s both}
+#lb .x,#lb .n{position:absolute;color:#fff;font-size:2rem;background:none;border:0;cursor:pointer;padding:1rem}
+#lb .x{top:.5rem;right:.5rem}#lb .p{left:.3rem}#lb .nx{right:.3rem}#lb .n{top:50%}
+#lbc{position:absolute;bottom:2rem;color:var(--pink);font-size:1rem}
+/* S5 cards */
+.cards{display:grid;gap:1.1rem;width:100%;max-width:26rem;margin-top:1rem}
+.card{padding:1.5rem;border-radius:20px;background:var(--glass);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(14px);font-size:1.35rem}
+.card.last{border-color:rgba(255,77,109,.6);box-shadow:0 0 50px rgba(255,77,109,.25);font-size:1.6rem}
+/* S6 letter */
+.paper{max-width:32rem;width:100%;padding:2.5rem 1.8rem;text-align:left;border-radius:6px 24px 6px 24px;background:linear-gradient(160deg,#f6ead9,#e8d5bb);color:#3a2a2a;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 70px rgba(255,77,109,.2);font-family:'Segoe Script','Bradley Hand','Comic Sans MS',cursive;font-size:clamp(1.05rem,4vw,1.3rem);line-height:2}
+.paper p{color:inherit;font-size:inherit;margin-bottom:1.1rem;max-width:none}
+.paper .sign{text-align:right;color:#a3203d}
+/* S7 */
+.cnt{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;width:100%;max-width:28rem;margin-top:1.5rem}
+.cnt div{padding:1.1rem .4rem;border-radius:18px;background:var(--glass);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px)}
+.cnt b{display:block;font-size:2rem;font-weight:400;color:#fff;text-shadow:0 0 20px rgba(255,77,109,.6);font-variant-numeric:tabular-nums}
+.cnt small{color:var(--pink);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase}
+/* S8 */
+#final{min-height:100vh;background:radial-gradient(circle at 50% 50%,#12060b,var(--bg) 70%)}
+#msg{display:none;max-width:34rem}
+#msg.on{display:block}
+#msg h2{font-size:clamp(2.6rem,10vw,4.5rem)}
+#msg p{margin:1rem auto;font-size:1.3rem;animation:fl 1.6s both}
+#msg p:nth-child(3){animation-delay:.8s}#msg p:nth-child(4){animation-delay:1.8s}#msg p:nth-child(5){animation-delay:3s;font-size:2rem;color:var(--red);text-shadow:0 0 30px var(--red)}#msg p:nth-child(6){animation-delay:4s}
+#mus{position:fixed;top:max(14px,env(safe-area-inset-top));right:14px;z-index:70;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(0,0,0,.4);color:#fff;font-size:1.1rem;cursor:pointer;backdrop-filter:blur(8px)}
+#mus.on{box-shadow:0 0 20px var(--red);border-color:var(--red)}
+.fh{position:fixed;z-index:80;pointer-events:none;animation:rise linear forwards}
+@keyframes rise{to{transform:translateY(-110vh) rotate(40deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body class="lock">
+<canvas id="fx"></canvas>
+<button id="mus" aria-label="Music" title="Music">♪</button>
+<audio id="aud" loop preload="none"><source src="/music/our-song.mp3" type="audio/mpeg"></audio>
+
+<!-- INTRO -->
+<div id="intro">
+  <h1>Hey Buggu...</h1>
+  <p class="sans">Tere liye kuch banaya hai ❤️</p>
+  <button class="btn sans" id="open">Open kar na →</button>
+</div>
+
+<!-- S1 -->
+<section id="s1">
+  <p class="sans rv" style="letter-spacing:.3em;color:var(--pink);font-size:.8rem">SHURUAT</p>
+  <h2 class="bigdate rv d1"><small>YE DIN</small>17 January<br>2024</h2>
+  <div class="lines">
+    <!-- TEXT EDIT -->
+    <p class="rv">Ek family festival...</p>
+    <p class="rv d1">bahut saare log...</p>
+    <p class="rv d2">normal si gathering...</p>
+    <p class="hl rv d3">aur phir tum.</p>
+    <p class="rv d3">Us waqt shayad mujhe idea bhi nahi tha ki ye ek chhoti si meeting future mein meri favourite memories mein se ek ban jayegi.</p>
+  </div>
+</section>
+
+<!-- S2 -->
+<section id="s2">
+  <h2 class="rv">Hamari story</h2>
+  <!-- TEXT EDIT: timeline. Har .mem ek yaad hai. -->
+  <div class="tl" id="tl">
+
+    <div class="ev"><b>17 January 2024</b><span class="mt">The Day I First Saw You</span>
+      <div class="mem rv">
+        <p>Mere bhanje ka mundan tha, aur wahin main tumse pehli baar mila. Tum apni mummy ke paas khadi thi. Tumhari palkein jhuki hui thi, aur aankhon ke paas woh chhoti-chhoti veins dikh rahi thi.</p>
+        <p>Pata nahi kyun, but tumhe dekhte hi meri nazar tum par ruk gayi. Main bas tumhe dekhta reh gaya.</p>
+        <p>Mere paas sirf ek din tha, isliye himmat karke maine tumhe bulaya aur apne dil ki baat keh di. Maine bola ki agar aaj nahi bola, toh shayad phir kabhi mil nahi paunga.</p>
+        <p>Tum thodi ghabraayi, thodi interested hui... aur ek friendly si haan keh di. ❤️</p>
+      </div></div>
+
+    <div class="ev small"><span>Phir baatein badhi...</span></div>
+
+    <div class="ev"><b>Muzaffarpur Railway Station</b><span class="mt">Jab train chalne lagi</span>
+      <div class="mem rv">
+        <p>Phir ek baar tumse Muzaffarpur Railway Station par mila. Main Delhi se aa raha tha, aur tum mujhse milne black suit aur black nail polish mein aayi thi. Tumhe dekhte hi main phir se bas dekhta reh gaya.</p>
+        <p>Mere paas zyada time nahi tha, kyunki meri train aage jaane wali thi. Tum mere paas baithi thi, nazrein jhuki hui, thodi sharmayi hui. Jitna time mila, humne usmein bahut saari baatein ki.</p>
+        <p>Lekin sabse emotional moment tab tha jab meri train chalne lagi. Tum station par khadi, palkein jhuka ke ro rahi thi, aur main bas tumhe dekhta hua door ja raha tha. ❤️</p>
+      </div></div>
+
+    <div class="ev small"><span>Phir tum important hoti gayi...</span></div>
+
+    <div class="ev"><b>Sitamarhi</b><span class="mt">Our Beautiful Day</span>
+      <div class="mem rv">
+        <p>Teesri baar Sitamarhi mein mile, jab tumhari exam checking duty lagi thi. Maine tumhe pehli baar uniform mein dekha, aur tum usmein bhi bahut pyaari lag rahi thi.</p>
+        <p>Uske baad hum mall gaye, bahut masti ki, shopping ki aur saath mein bahut time spend kiya. Phir café gaye, khaya-piya aur khoob baatein ki. ❤️</p>
+        <div class="mph"><img data-base="images/juli-4" alt="Our Beautiful Day" loading="lazy"></div>
+      </div></div>
+
+    <div class="ev small"><span>Phir main Delhi chala gaya, aur jab wapas aaya...</span></div>
+
+    <div class="ev"><b>Phir se Sitamarhi</b><span class="mt">Janki Mandir</span>
+      <div class="mem rv">
+        <p>Jab main Delhi se wapas aaya, toh hum phir Sitamarhi mein mile. Is baar Janki Mandir ke paas saath mein pooja ki, aur maine tumhe anklet pehnaya.</p>
+        <p>Tum us moment mein itni pyaari lag rahi thi ki bas dekhta rahun.</p>
+        <p>Lekin phir wahi mushkil moment, wapas jaana. Tumhare aansu aur tumhari tadhap dekhna mere liye sabse difficult tha. Long distance mein bhi humne bahut kuch saha. ❤️</p>
+        <div class="mph"><img data-base="images/juli-3" alt="Janki Mandir" loading="lazy"></div>
+      </div></div>
+
+    <div class="ev small"><span>Aur phir pata hi nahi chala kab tum meri favourite person ban gayi.</span></div>
+  </div>
+</section>
+
+<!-- S3 -->
+<section id="smile">
+  <h2 class="rv">Tumhari smile...</h2>
+  <p class="rv d1">Ek baat bataun?</p>
+  <!-- PHOTO: images/juli-2.png (cutout) ya juli-2.jpg -->
+  <div class="frame rv d2" id="frame"><img data-base="images/juli-2" alt="Juli ki smile"></div>
+  <p class="rv">Tum jab hasti ho na...<br>pata nahi kyun, but woh moment automatically special ho jaata hai.</p>
+  <p class="rv" style="margin-top:1.2rem">Shayad tumhe normal lagta ho,<br>but mujhe tumhari woh smile bahut zyada pasand hai.</p>
+</section>
+
+<!-- S4 -->
+<section id="gallery">
+  <h2 class="rv">Kuch yaadein</h2>
+  <p class="sans rv" style="font-size:.9rem;color:var(--mut)">Swipe kar →</p>
+  <div class="row rv" id="row"></div>
+</section>
+<div id="lb"><button class="x" id="lx">✕</button><button class="n p" id="lp">‹</button><img id="li" alt=""><button class="n nx" id="ln">›</button><div id="lbc" class="sans"></div></div>
+
+<!-- S5 -->
+<section id="likes">
+  <h2 class="rv">Tumhari chhoti chhoti cheezein</h2>
+  <div class="cards">
+    <!-- TEXT EDIT: cards -->
+    <div class="card rv">Tumhari smile ❤️</div>
+    <div class="card rv">Tumhara hasna</div>
+    <div class="card rv">Tumhari cute si vibes</div>
+    <div class="card rv">Tumhara Buggu hona 😭❤️</div>
+    <div class="card last rv">Aur honestly... tum.</div>
+  </div>
+</section>
+
+<!-- S6 -->
+<section id="letter">
+  <h2 class="rv">Buggu, ek baat kehni thi...</h2>
+  <div class="paper rv">
+    <!-- TEXT EDIT: letter -->
+    <p>Juli,</p>
+    <p>shayad main har baar words mein properly express nahi kar pata, but tum mere liye genuinely bahut special ho.</p>
+    <p>17 January 2024 ko jab hum mile the, tab mujhe bilkul idea nahi tha ki tum meri life ki story ka itna beautiful part ban jaogi.</p>
+    <p>Tumhari smile, tumhari presence, aur tumhari woh chhoti-chhoti cheezein... pata nahi kab itni important ho gayi.</p>
+    <p>Main bas itna kehna chahta hoon... Thank you meri life mein aane ke liye.</p>
+    <p>Aur haan, aise hi haste rehna... kyunki tum jab hasti ho na, bahut achhi lagti ho. ❤️</p>
+    <p class="sign">— Ankit</p>
+  </div>
+</section>
+
+<!-- S7 -->
+<section id="time">
+  <h2 class="rv">Itne time se meri favourite person ho ❤️</h2>
+  <div class="cnt rv sans" id="cnt"></div>
+</section>
+
+<!-- S8 -->
+<section id="final">
+  <div id="pre">
+    <h2 class="rv" style="-webkit-text-fill-color:var(--mut);background:none">Bas ek last cheez...</h2>
+    <button class="btn sans rv d2" id="reveal">Click kar Buggu ❤️</button>
+  </div>
+  <div id="msg">
+    <h2>Juli,</h2>
+    <!-- TEXT EDIT: final message -->
+    <p>17 January 2024 se lekar aaj 4 October 2026 tak...</p>
+    <p>bahut kuch change hua,<br>but ek cheez nahi badli —<br>tum mere liye kitni special ho.</p>
+    <p>Happy us. ❤️</p>
+    <p>— Ankit</p>
+  </div>
+</section>
+
+<script>
+/* ====== EDIT HERE ====== */
+// PHOTOS: base = images/juli-N (bina extension). Cutout PNG ho to juli-N.png rakho, warna juli-N.jpg.
+// Files images/ folder mein rakho. Nayi photo add karne ke liye ek line add karo.
+const PHOTOS=[
+ {base:'images/juli-1',cap:'Hamari masti 😭'},
+ {base:'images/juli-2',cap:'Woh smile ❤️'},
+ {base:'images/juli-3',cap:'Hasi ruk hi nahi rahi thi'},
+ {base:'images/juli-4',cap:'Bas hum dono'}
+];
+const START=new Date(2024,0,17,0,0,0); // 17 Jan 2024 — time counter ki date
+/* ======================= */
+const $=s=>document.querySelector(s);
+
+// reveal on scroll
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.2});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// intro
+$('#open').onclick=()=>{$('#intro').classList.add('gone');document.body.classList.remove('lock');setTimeout(()=>$('#s1').scrollIntoView({behavior:'smooth'}),300)};
+
+// particles
+const cv=$('#fx'),cx=cv.getContext('2d');let W,H,P=[];
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+for(let i=0;i<(innerWidth<600?45:80);i++)P.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.6+.3,v:Math.random()*.25+.05,a:Math.random(),h:Math.random()<.2});
+(function loop(){cx.clearRect(0,0,W,H);for(const p of P){p.y-=p.v;p.a+=.01;if(p.y<-10){p.y=H+10;p.x=Math.random()*W}
+ cx.globalAlpha=(Math.sin(p.a)+1)/2*.7;cx.fillStyle=p.h?'#ff4d6d':'#ffd6e0';
+ if(p.h){cx.font=(p.r*7)+'px serif';cx.fillText('♥',p.x,p.y)}else{cx.beginPath();cx.arc(p.x,p.y,p.r,0,7);cx.fill()}}
+ requestAnimationFrame(loop)})();
+
+// floating hearts around smile photo
+const fr=$('#frame');
+setInterval(()=>{const h=document.createElement('span');h.className='hrt';h.textContent='♥';
+ h.style.cssText=`left:${Math.random()*100}%;bottom:${Math.random()*30}%;color:#ff4d6d;font-size:${10+Math.random()*14}px`;
+ fr.parentNode.appendChild(h);setTimeout(()=>h.remove(),6000)},900);
+fr.style.position='relative';
+
+// timeline line
+new IntersectionObserver((e,o)=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');o.unobserve(x.target)}}),{threshold:.03}).observe($('#tl'));
+
+// gallery
+const row=$('#row');let cur=0;
+// PNG (cutout) mile to wahi use hoga, nahi to JPG
+function pic(im,base,fail){let t=0;im.onload=()=>im.classList.toggle('cut',/\.png/.test(im.src));
+ im.onerror=()=>{if(!t++){im.src=base+'.jpg'}else if(fail)fail()};im.src=base+'.png'}
+document.querySelectorAll('img[data-base]').forEach(i=>pic(i,i.dataset.base));
+const imgs=[];
+PHOTOS.forEach((p,i)=>{const f=document.createElement('figure');f.className='ph-card';
+ const im=new Image();im.alt=p.cap;im.loading='lazy';imgs.push(im);
+ pic(im,p.base,()=>{f.className='ph-card missing sans';f.textContent=p.base;f.onclick=null});
+ f.append(im);const c=document.createElement('figcaption');c.textContent=p.cap;f.append(c);
+ f.onclick=()=>show(i);row.append(f)});
+function show(i){cur=(i+PHOTOS.length)%PHOTOS.length;$('#li').src=imgs[cur].src;$('#li').classList.toggle('cut',/\.png/.test(imgs[cur].src));$('#lbc').textContent=PHOTOS[cur].cap;$('#lb').classList.add('on')}
+$('#lx').onclick=()=>$('#lb').classList.remove('on');
+$('#lp').onclick=()=>show(cur-1);$('#ln').onclick=()=>show(cur+1);
+let tx=0;$('#lb').addEventListener('touchstart',e=>tx=e.touches[0].clientX);
+$('#lb').addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)show(cur+(d<0?1:-1))});
+addEventListener('keydown',e=>{if(!$('#lb').classList.contains('on'))return;if(e.key=='Escape')$('#lx').click();if(e.key=='ArrowLeft')show(cur-1);if(e.key=='ArrowRight')show(cur+1)});
+
+// counter
+const lab=['Saal','Mahine','Din','Ghante','Minute','Second'];
+$('#cnt').innerHTML=lab.map(l=>`<div><b>0</b><small>${l}</small></div>`).join('');
+const bs=[...document.querySelectorAll('#cnt b')];
+function tick(){const n=new Date();let y=n.getFullYear()-START.getFullYear(),m=n.getMonth()-START.getMonth(),d=n.getDate()-START.getDate(),
+ h=n.getHours(),mi=n.getMinutes(),s=n.getSeconds();
+ if(d<0){m--;d+=new Date(n.getFullYear(),n.getMonth(),0).getDate()}if(m<0){y--;m+=12}
+ [y,m,d,h,mi,s].forEach((v,i)=>bs[i].textContent=v)}
+tick();setInterval(tick,1000);
+
+// final surprise
+function heart(){const h=document.createElement('div');h.className='fh';h.textContent=Math.random()<.8?'❤':'✨';
+ h.style.cssText=`left:${Math.random()*100}vw;bottom:-30px;font-size:${14+Math.random()*22}px;color:${['#ff4d6d','#ffb3c6','#ff758f','#fff'][Math.random()*4|0]};animation-duration:${4+Math.random()*5}s`;
+ document.body.append(h);setTimeout(()=>h.remove(),9000)}
+$('#reveal').onclick=()=>{$('#pre').style.display='none';$('#msg').classList.add('on');
+ let n=0;const t=setInterval(()=>{heart();if(++n>90)clearInterval(t)},120);setInterval(heart,900)};
+
+// music (autoplay-safe: sirf button click par chalega)
+const a=$('#aud'),mb=$('#mus');
+mb.onclick=()=>{if(a.paused){a.play().then(()=>mb.classList.add('on')).catch(()=>{})}else{a.pause();mb.classList.remove('on')}};
+a.querySelector('source').addEventListener('error',()=>{mb.style.display='none'});
+</script>
+</body>
+</html>
